@@ -1,3 +1,15 @@
 from django.contrib import admin
+from utils.snippets import CustomModelAdminMixin
+from events.models import Event
 
-# Register your models here.
+
+# ----------------------------------------------------
+# *** Event ***
+# ----------------------------------------------------
+
+class EventAdmin(CustomModelAdminMixin, admin.ModelAdmin):
+    class Meta:
+        model = Event
+
+
+admin.site.register(Event, EventAdmin)

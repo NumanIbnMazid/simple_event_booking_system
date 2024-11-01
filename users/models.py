@@ -6,6 +6,9 @@ from django.contrib.auth.models import (
 )
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+from utils.snippets import generate_unique_username_from_email
 
 class UserManager(BaseUserManager):
     use_in_migrations = True
@@ -57,3 +60,10 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.username if self.username else self.email
+
+
+@receiver(pre_save, sender=User)
+def update_username_from_email(sender, instance, **kwargs):
+    """Generates and updates username from user email on User pre_save hook"""
+    if not instance.pk:
+        instance.username = generate_unique_username_from_email(instance=instance)

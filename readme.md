@@ -7,4 +7,13 @@
 Email: admin@admin.com
 Password: admin
 
-Sample Token: Token d903f59832117757821282fd1cf99251451c8960572815b834502a79a039e44c
+Sample Token: Token 17463ab0948940596d056dc674902623a921ea65fe230bf72732438e10c4c54e
+
+### Regular User
+
+Email: user1@user.com
+Password: password@123
+
+### VIP User
+Email: user_vip@user.com
+Password: password@123
