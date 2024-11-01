@@ -16,6 +16,51 @@ Password: password@123
 Email: user_vip@user.com
 Password: password@123
 
+## Features
+
+- Event creation and management by admins
+- Ticket booking for regular and VIP users
+- Early bird pricing applied automatically
+- Weekly reminder email for booked events
+
+## Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/BrainStation23HR/Python_Mazid.git
+   cd Python_Mazid
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   pip install -r requirements.txt
+   ```
+
+2. Environment Variables
+   Create a .env file in the root directory with the following variables:
+    ```text
+    # Django Settings
+    SECRET_KEY=django-insecure-dl5nifj0h7rw#n5-q=hmen==8jti5gj+@z580*c3j(_*=dj8ze
+    MODE=DEVELOPMENT
+
+    # Email Settings
+    EMAIL_HOST_USER=your_email@gmail.com
+    EMAIL_HOST_PASSWORD=your_email_password
+    EMAIL_PORT=587
+    ```
+3. Database
+The project uses a pre-configured SQLite database file (db.sqlite3) included in the repository. You can directly proceed with the migration steps to verify all database settings.
+
+4. Running the Project
+   Run migrations
+   ```bash
+   python manage.py migrate
+   ```
+
+   Start the development server
+   ```bash
+   python manage.py runserver
+   ```
+
 
 ## API Documentation
 
@@ -26,6 +71,37 @@ Please Navigate to:
 
 
 API Schema:
+
+1. Event Endpoints
+Create Event (Admins only): POST /api/events/
+
+Request Schema:
+```json
+{
+  "name": "Music Festival",
+  "date": "2024-12-25",
+  "location": "City Park",
+  "total_regular_tickets": 100,
+  "total_vip_tickets": 50,
+  "regular_ticket_price": 20.0,
+  "vip_ticket_price": 50.0,
+  "early_bird_price": 15.0,
+  "early_bird_deadline": "2024-12-01"
+}
+```
+
+Update/Delete Event (Admins only): PUT/PATCH/DELETE /api/events/{event_id}/
+
+2. Booking Endpoints
+Book Event: POST /api/bookings/
+Request Schema:
+```json
+{
+  "event_id": 1,
+  "ticket_type": "Regular",
+  "quantity": 2
+}
+```
 
 ```json
 {
