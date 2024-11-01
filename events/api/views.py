@@ -9,10 +9,16 @@ class EventViewSet(viewsets.ModelViewSet):
     """
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    permission_classes = [permissions.IsAdminUser]  # Restrict to admin users only
+    permission_classes = [permissions.IsAuthenticated]  # Restrict to admin users only
 
     def perform_create(self, serializer):
         """
         Override to handle custom create logic if needed.
         """
         serializer.save()
+
+    def get_permissions(self):
+        # Apply IsAdminUser permission only for the create, update and delete method
+        if self.action in ["create", "update", "destroy"]:
+            return [permissions.IsAdminUser()]
+        return super().get_permissions()
