@@ -34,6 +34,8 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     "users",
+    "events",
+    "bookings",
 ]
 INSTALLED_APPS = (
     [
