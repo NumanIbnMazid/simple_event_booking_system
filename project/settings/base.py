@@ -181,3 +181,7 @@ REST_FRAMEWORK = {
 # STATIC & MEDIA URL
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
+
+# Celery
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Adjust broker as needed
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
