@@ -16,6 +16,8 @@ Password: password@123
 Email: user_vip@user.com
 Password: password@123
 
+To create new users please use django's default admin panel: http://localhost:8000/admin/users/user/
+
 ## Features
 
 - Event creation and management by admins
