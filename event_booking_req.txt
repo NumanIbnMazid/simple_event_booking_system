@@ -1,0 +1,30 @@
+Event Booking System
+You are tasked with building an event booking system. Events have a limited number of
+seats and users can book tickets. However, there's an early bird discount that is only
+available until a certain date. Once the early bird period expires, the regular ticket price
+applies. Additionally, each event has a VIP section, where seats are reserved for users
+with a specific VIP status.
+Requirements:
+1. Database Design:
+Design models for User, Event, and Booking.
+Users can book multiple tickets for a single event.
+VIP users should have access to a separate pool of tickets(VIP tickets).
+Each event has a limited number of regular and VIP tickets.
+Support early bird pricing with a discount available only for bookings made
+before a specific deadline.
+2. API Endpoints:
+Create Event: Admins should be able to create an event with regular and VIP
+ticket limits, and an early bird date.
+Book Event: Users should be able to booktickets for an event. VIP users
+should be allowed to book VIP tickets. Regular users should book regular
+tickets, and the early bird price should apply automatically if within the
+discount period.
+3. Authentication/Authorization:
+Only authenticated users can book tickets.
+Event creation should be restricted to admin users.
+Regular users should not be able to book VIP tickets.
+Bonus: Remember to send a reminder email to the user a week before their
+event(s).
+Implement this in Django/DRF, document the APl request and response schema in the
+README.md, and push the code to the repository with a clear and descriptive commit
+message. Also you can submit your ERD in pen & paper to the Invigilator.
