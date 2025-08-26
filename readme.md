@@ -30,8 +30,8 @@ To create new users please use django's default admin panel: http://localhost:80
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/BrainStation23HR/Python_Mazid.git
-   cd Python_Mazid
+   git clone [https://github.com/NumanIbnMazid/simple_event_booking_system.git](https://github.com/NumanIbnMazid/simple_event_booking_system.git)
+   cd simple_event_booking_system
    python3 -m venv venv
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
    pip install -r requirements.txt
