@@ -41,7 +41,7 @@ To create new users please use django's default admin panel: http://localhost:80
    Create a .env file in the root directory with the following variables:
     ```text
     # Django Settings
-    SECRET_KEY=django-insecure-dl5nifj0h7rw#n5-q=hmen==8jti5gj+@z580*c3j(_*=dj8ze
+    SECRET_KEY=SAMPLE_SECRET_KEY
     MODE=DEVELOPMENT
 
     # Email Settings
